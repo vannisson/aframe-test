@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/urish/aframe-camera-events/master/index.js"></script>
+  </head>
+  <body>
+    <script src="app.js"></script>
+
+    <a-scene>
+      <a-camera
+        look-controls
+        wasd-controls
+        fov="100"
+        position="0.0 1.9 0.0"
+        id="#camera"
+        position-listener
+        rotation-listener
+      >
+        <a-entity
+          id="#hud-text"
+          position="0.33 0.4 -0.5"
+          text="value:Treinamento VR - Prysmian;"
+          scale="1.5 1.5 1.5"
+          rotation="0 0 0"
+          animation-mixer
+        ></a-entity>
+      </a-camera>
+      <a-entity
+        geometry="primitive:plane"
+        id="menu-center"
+        position="0 1 -4.5"
+        scale="7 4 0"
+        material="color:#1F1B24"
+        text="value: This is a test; "
+      ></a-entity>
+
+      <a-entity
+        geometry="primitive:plane"
+        id="menu-left"
+        position="7 1 -2"
+        rotation="0 -45 0"
+        scale="7 4 0"
+        material="color:#1F1B24"
+      ></a-entity>
+
+      <a-entity
+        geometry="primitive:plane"
+        id="menu-right"
+        position="-7 1 -2"
+        rotation="0 45 0"
+        scale="7 4 0"
+        material="color:#1F1B24"
+      ></a-entity>
+      <a-assets>
+        <img id="sky" src="sky.png" />
+      </a-assets>
+      <a-sky src="#sky"></a-sky>
+    </a-scene>
+  </body>
+</html>
